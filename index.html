@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo com Acordeão</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/style.css" rel="stylesheet"> 
+</head>
+<body>
+<div class="container my-5">
+  <h1 class="text-center">Estrutura de Repetição</h1>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Introdução
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <p>Hoje estudaremos sobre laços de repetição, explicando sua importância, formas de serem utilizados em um código, quando utilizá-los e boas práticas referentes à utilização dos laços de repetição.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Laço de Repetição
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <p>Laço de repetição, ou laço de iteração, como também é conhecido, é a lógica aplicada quando é necessário realizar uma contagem ou repetir um trecho de código várias vezes, enquanto atende uma condição. A aplicação de laço de repetição evita duplicidade de código, além de facilitar operações aritméticas muito extensas.</p>
+          <p>Aplicação de laço de repetição em um fluxograma:</p>
+          <br>
+          <img src="/imagens.png" alt="Fluxograma" class="img-fluid" style="width: 350px; height: 450px;">
+          <br><br>
+          <p>Neste fluxograma, vemos que a variável <code>cont</code> é inicializada com o valor inteiro 1. Na próxima etapa, irá imprimir a variável, e, logo em seguida, surge a estrutura condicional que pergunta: <code>cont</code> é menor que 10? Se sim, ele irá para um processamento onde será somado 1 à variável <code>cont</code> e voltará ao ponto do trecho de código onde é imprimido a variável <code>cont</code>, onde logo em seguida fará novamente a pergunta da estrutura condicional. A partir daqui o trecho do fluxograma irá se repetir até que a condição deixe de ser verdadeira, assim encerrando o fluxograma.</p>
+          <p>Percebe-se que, ao invés do usuário escrever <code>cont = cont + 1, print(cont), cont = cont + 1, print(cont)...</code> etc, o trecho é escrito uma única vez, mas de maneira que irá voltar no ponto do trecho em que a soma é realizada, até que a condição deixe de ser verdadeira. Este é uma das muitas vantagens que laço de repetição traz à programação. Vale lembrar que, ao criar um laço de repetição, é essencial que tenha a condição de saída ou um breakpoint dentro do laço, pois se o código for executado e a condição do laço de repetição continuar sendo verdadeira, o trecho de código irá ser repetido indefinidamente ou até utilizar toda a memória da máquina, gerando um crash (tela azul).</p>
+          <p>Em uma linguagem de programação, existem quatro comandos que utilizam o laço de repetição: <code>for</code>, <code>while</code>, <code>do...while</code> e <code>foreach</code>. Entenda as diferenças entre o funcionamento destes quatro comandos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            FOR
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          <p>Para este comando, temos três partes para realizar a ação de repetição:</p>
+          <ul>
+            <li>Criar/iniciar variável de contagem: nesta etapa, é criada e inicializada uma variável que irá ser “contada” até que a condição não seja mais verdadeira. Exemplo: <code>for (int contagem = 0;</code>.</li>
+            <li>Estrutura condicional: Aqui é onde será feita a condição em que o laço de repetição irá operar, lembrando que laço de repetição funciona apenas enquanto a condição for verdadeira. Exemplo de condicionamento: <code>contagem <= 10;</code>.</li>
+            <li>Progressão/Regressão da contagem: Esta é a etapa final da função <code>for</code>, e ela só é executada no final do trecho de código dentro do laço de repetição. Neste momento é adicionado ou subtraído da variável de contagem, conforme for especificado no início do laço de repetição. Exemplo: <code>contagem++</code> ou <code>contagem--</code>.</li>
+          </ul>
+          <p>Desta forma, se monta um comando de repetição <code>for</code> em C ANSI:</p>
+          <pre><code>for (int contagem = 0; contagem <= 10; contagem++) {     
+        printf("%i ", contagem);  
+    }
+    // Saída do código: 0 1 2 3 4 5 6 7 8 9 10</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            WHILE
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card-body">
+          <p>A função <code>while</code>, assim como o <code>for</code>, serve para executar um trecho de código enquanto a condição for verdadeira, porém, diferente do <code>for</code>, não é “atrelada” a uma contagem. No condicionamento desta função, pode ser utilizado operadores lógicos (true/false) e até mesmo textos. Exemplo:</p>
+          <pre><code>string Palavra;
+printf("Digite uma palavra: ");
+scanf("%s", &Palavra); 						
+while (Palavra != "oi") {        
+    printf("palavra é %s\n", Palavra);     
+    printf("Digite outra palavra: ");
+    scanf("%s", &Palavra);
+}
+printf("terminou");</code></pre>
+          <p>Este trecho de código irá imprimir quaisquer palavras que forem digitadas, até que o valor da variável <code>Palavra</code> seja "oi”. Ou seja, enquanto <code>Palavra</code> não for 'oi', não irá sair do laço de repetição.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFive">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            DO...WHILE
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+        <div class="card-body">
+          <p>A função <code>do...while</code> funciona da mesma forma que a função <code>while</code>, mas a condição é testada no final do trecho de código. O que muda na execução do código? Quando a condição é testada no fim do trecho de código, geralmente ele repete uma vez a mais que o <code>while</code>, pois ele irá entrar no laço de repetição independente da condição para sair do mesmo. Exemplo:</p>
+          <pre><code>int cont = 10;
+do {
+    cont++;
+} while (cont < 10);
+printf("%i", cont);</code></pre>
+          <p>Imprime: 11</p>
+          <pre><code>while (cont < 10) {
+    cont++;
+}
+printf("%i", cont);</code></pre>
+          <p>Imprime: 10</p>
+          <p>Como visto, ao usar o <code>do...while</code>, o programa entra obrigatoriamente no laço de repetição pelo menos uma vez.</p>
+          <p>Neste artigo, vimos que laço de repetição é extremamente útil para facilitar a escrita e leitura de código, compactar operações aritméticas, além de melhorar o controle de informação desejada. Vimos também algumas boas práticas para utilização do laço de repetição e o que evitar ao utilizá-la.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

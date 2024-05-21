@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    background-size: cover;
+    background-position: center;    
+    color: #000000; 
+}
+
+.accordion .card-header {
+    background-color: #3498db;
+    color: #ffffff; 
+}
+
+.accordion .btn-link {
+    color: #ffffff; 
+}
+
+.accordion .card-body {
+    background-color: #ffffff; 
+    color: #000000; 
+    margin: 20px;
+}
+
+h1 {
+    color: #ffffff; 
+}
